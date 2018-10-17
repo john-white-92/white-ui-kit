@@ -1,0 +1,36 @@
+// Кнопка
+@mixin type-outlined () {
+	fill: $outlined-icon;
+	color: $outlined-color;
+	border: solid 1px $outlined-border;
+	background: $outlined-bg;
+	transition:
+		fill 200ms ease,
+		color 200ms ease,
+		border 200ms ease;
+	&:hover,
+	&:focus {
+		fill: $outlined-hover-icon;
+		color: $outlined-hover-color;
+		border: solid 1px $outlined-hover-border;
+	}
+	&:active {
+		fill: $outlined-active-icon;
+		color: $outlined-active-color;
+		border: solid 1px $outlined-active-border;
+	}
+	&[disabled] {
+		&,
+		&:hover,
+		&:focus,
+		&:active {
+			fill: $outlined-disabled-icon;
+			color: $outlined-disabled-color;
+			border: solid 1px $outlined-disabled-border;
+		}
+	}
+
+	.content {
+		padding: 0 16px;
+	}
+}

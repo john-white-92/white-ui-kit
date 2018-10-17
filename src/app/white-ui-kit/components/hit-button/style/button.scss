@@ -1,0 +1,74 @@
+@import '../../../scss/index.scss';
+
+// Типы кнопок
+@import './type-text.scss';
+@import './type-outlined.scss';
+@import './type-contained.scss';
+@import './type-contained-high.scss';
+
+// Кнопка
+@mixin button () {
+	@include reset-component();
+	vertical-align: middle;
+	min-width: 34px;
+	height: 34px;
+	border-radius: 2px;
+	border: none;
+	user-select: none;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	&, & * {
+		cursor: pointer;
+	}
+
+	&[disabled] {
+		&, & * {
+			cursor: default;
+		}
+	}
+
+	.wrapper {
+		@include row-max();
+		align-items: center;
+		width: 100%;
+	}
+
+	.content {
+		@include row-max();
+		font-size: 14px;
+		font-weight: 600;
+	}
+
+	.text {
+		@include text-single-line();
+		@include font-family();
+	}
+
+	// Выравнивание контента по центру
+	&[content-align="center"] {
+		.content {
+			justify-content: center;
+		}
+	}
+
+	&:not([button-type]) {
+		@include type-contained();
+	}
+
+	&[button-type="text"] {
+		@include type-text();
+	}
+
+	&[button-type="outlined"] {
+		@include type-outlined();
+	}
+
+	&[button-type="contained"] {
+		@include type-contained();
+	}
+
+	&[button-type="contained-high"] {
+		@include type-contained-high();
+	}
+}

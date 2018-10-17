@@ -1,1 +1,1 @@
-white-ui-kit
+# demo-white-ui-kit

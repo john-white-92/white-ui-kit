@@ -1,0 +1,16 @@
+<input class="input"
+	type="checkbox"
+	[(ngModel)]="checked"
+	[disabled]="disabled">
+
+<div class="checker">
+	<div class="checker__checked">
+		<svg class="checker__icon">
+			<use xlink:href="#hit_checked"></use>
+		</svg>
+	</div>
+</div>
+
+<span class="content">
+	<ng-content></ng-content>
+</span>

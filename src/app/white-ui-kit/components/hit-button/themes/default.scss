@@ -1,0 +1,43 @@
+@import '../../../themes/default.scss';
+
+// type text
+$text-bg: transparent;
+$text-color: $main;
+$text-hover-color: lighten($main, 10%);
+$text-active-color: darken($main, 10%);
+$text-disabled-color: $disabled-color;
+
+// type outlined
+$outlined-bg: transparent;
+$outlined-icon: $main;
+$outlined-border: $main;
+$outlined-color: $main;
+$outlined-hover-icon: lighten($main, 10%);
+$outlined-hover-color: lighten($main, 10%);
+$outlined-hover-border: lighten($main, 10%);
+$outlined-active-icon: darken($main, 10%);
+$outlined-active-color: darken($main, 10%);
+$outlined-active-border: darken($main, 10%);
+$outlined-disabled-icon: $disabled;
+$outlined-disabled-border: $disabled-color;
+$outlined-disabled-color: $disabled-color;
+
+// type-contained
+$contained-color: $main-color;
+$contained-icon: $main-color;
+$contained-bg: $main;
+$contained-hover-bg: lighten($main, 10%);
+$contained-active-bg: darken($main, 10%);
+$contained-disabled-bg: $disabled;
+$contained-disabled-icon: $disabled-color;
+$contained-disabled-color: $disabled-color;
+
+// type-contained-high
+$contained-high-color: $main-color;
+$contained-high-icon: $main-color;
+$contained-high-bg: $high;
+$contained-high-hover-bg: lighten($high, 10%);
+$contained-high-active-bg: darken($high, 10%);
+$contained-high-disabled-bg: $disabled;
+$contained-high-disabled-icon: $disabled-color;
+$contained-high-disabled-color: $disabled-color;

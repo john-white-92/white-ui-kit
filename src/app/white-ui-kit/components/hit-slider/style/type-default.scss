@@ -1,0 +1,125 @@
+// По умолчанию
+@mixin type-default () {
+
+	// Размеры
+	$slider-margin: 2px;
+	$slider-size: 16px;
+	$thumb-size: 10px;
+	$button-size: 19px;
+
+	// Для горизонтального направления
+	$icon-width: 5px;
+	$icon-height: 6px;
+
+	& {
+		border-radius: 2px;
+		background: $default-slider-bg;
+	}
+
+	.thumb {
+		border-radius: $thumb-size / 2;
+		background: $default-thumb-bg;
+		box-shadow: $default-thumb-shadow;
+		transition: box-shadow 0.3s ease;
+		&:hover,
+		&.thumb--pressed {
+			box-shadow: $default-thumb-shadow-hover;
+		}
+	}
+
+	.button--up,
+	.button--down {
+		background: $default-slider-bg;
+		transition: background 0.2s ease;
+		&:hover {
+			background: $default-slider-bg-hover;
+		}
+		&:after {
+			transition: border 0.2s ease;
+		}
+	}
+
+	// Горизонтальный слайдер
+	&[direction="horizontal"] {
+		@include row-auto();
+		height: $slider-size;
+
+		.slider {
+			@include row-max();
+			margin: 0 $slider-margin;
+		}
+
+		.thumb {
+			height: $thumb-size;
+		}
+
+		.button--up,
+		.button--down {
+			width: $button-size;
+		}
+
+		.button--up {
+			&:after {
+				border-top: solid $icon-height / 2 transparent;
+				border-bottom: solid $icon-height / 2 transparent;
+				border-right: solid $icon-width $default-button-icon;
+			}
+			&:hover:after {
+				border-right: solid $icon-width $default-button-icon-hover;
+			}
+		}
+
+		.button--down {
+			&:after {
+				border-top: solid $icon-height / 2 transparent;
+				border-bottom: solid $icon-height / 2 transparent;
+				border-left: solid $icon-width $default-button-icon;
+			}
+			&:hover:after {
+				border-left: solid $icon-width $default-button-icon-hover;
+			}
+		}
+	}
+
+	// Вертикальный слайдер
+	&[direction="vertical"] {
+		@include col-auto();
+		width: $slider-size;
+
+		.slider {
+			@include col-max();
+			margin: $slider-margin 0;
+		}
+
+		.thumb {
+			width: $thumb-size;
+		}
+
+		.button--up,
+		.button--down {
+			height: $button-size;
+		}
+
+		.button--up {
+			&:after {
+				border-left: solid $icon-height / 2 transparent;
+				border-right: solid $icon-height / 2 transparent;
+				border-bottom: solid $icon-width $default-button-icon;
+			}
+			&:hover:after {
+				border-bottom: solid $icon-width $default-button-icon-hover;
+			}
+		}
+
+		.button--down {
+			&:after {
+				border-left: solid $icon-height / 2 transparent;
+				border-right: solid $icon-height / 2 transparent;
+				border-top: solid $icon-width $default-button-icon;
+			}
+			&:hover:after {
+				border-top: solid $icon-width $default-button-icon-hover;
+			}
+		}
+	}
+}

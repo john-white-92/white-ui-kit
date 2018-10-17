@@ -1,0 +1,30 @@
+@import '../../../scss/index.scss';
+
+:host {
+	@include col-max();
+	padding: 24px;
+}
+
+.row {
+	@include row-auto();
+	margin-bottom: 16px;
+	& > button {
+		margin-right: 16px;
+	}
+}
+
+.button-wide {
+	width: 300px;
+}
+
+.icon-left {
+	width: 12px;
+	height: 12px;
+	margin-left: 16px;
+}
+
+.icon-right {
+	width: 12px;
+	height: 12px;
+	margin-right: 16px;
+}

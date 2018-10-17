@@ -1,0 +1,37 @@
+@import '../../../scss/index.scss';
+
+// Типы слайдера
+@import './type-default.scss';
+
+// Слайдер
+@mixin slider () {
+	@include reset-component();
+	position: relative;
+	overflow: hidden;
+
+	.slider {
+		align-items: center;
+	}
+
+	.thumb {
+		@include col-auto();
+	}
+
+	.button {
+		@include col-auto();
+		z-index: 1;
+		&:after {
+			@include col-auto();
+			content: '';
+			width: 0;
+			height: 0;
+			margin: auto;
+			pointer-events: none;
+		}
+	}
+
+	&,
+	&[slider-type="default"] {
+		@include type-default();
+	}
+}

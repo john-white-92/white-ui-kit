@@ -1,0 +1,36 @@
+@import '../../../scss/index.scss';
+
+$main: #eceff3;
+$text: #6d91bb;
+
+:host {
+	@include reset();
+	@include row-auto();
+	overflow: hidden;
+	position: relative;
+	padding: 12px;
+	padding-top: 32px;
+	border-radius: 2px;
+	border: solid 1px $main;
+	&:not(:first-child) {
+		margin-top: 12px;
+	}
+	&:after {
+		@include reset();
+		@include font-family();
+		@include text-single-line();
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 20px;
+		line-height: 20px;
+		padding: 0 4px;
+		content: attr(row-title);
+		font-size: 11px;
+		font-weight: bold;
+		user-select: none;
+		color: $text;
+		background: $main;
+	}
+}

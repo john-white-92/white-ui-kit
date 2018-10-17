@@ -1,0 +1,20 @@
+@import './scss/index.scss';
+@import './fonts/index.scss';
+
+// Импорт из node_modules
+@import '~@angular/cdk/_overlay.scss';
+
+html,
+body {
+	@include reset();
+	@include col-auto();
+	position: relative;
+	overflow: auto;
+	height: 100%;
+	font-size: 14px;
+	padding: 0;
+	margin: 0;
+}
+
+// Миксина содержит классы для контейнера всплывающих окон
+@include cdk-overlay();

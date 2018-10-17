@@ -1,0 +1,33 @@
+<div class="header">
+	<span>{{current}}/{{maxOffset}}</span>
+</div>
+
+<div class="row">
+	<div class="row__cell">
+		<hit-slider class="slider slider--horizontal"
+			direction="horizontal"
+			[viewport]="size"
+			[canvas]="max"
+			[offset]="current"
+			(sliderMoved)="onSliderMoved($event)"
+			(sliderLineUp)="onLineUp()"
+			(sliderLineDown)="onLineDown()"
+			(sliderPageUp)="onPageUp()"
+			(sliderPageDown)="onPageDown()">
+		</hit-slider>
+	</div>
+
+	<div class="row__cell">
+		<hit-slider class="slider slider--vertical"
+			direction="vertical"
+			[viewport]="size"
+			[canvas]="max"
+			[offset]="current"
+			(sliderMoved)="onSliderMoved($event)"
+			(sliderLineUp)="onLineUp()"
+			(sliderLineDown)="onLineDown()"
+			(sliderPageUp)="onPageUp()"
+			(sliderPageDown)="onPageDown()">
+		</hit-slider>
+	</div>
+</div>

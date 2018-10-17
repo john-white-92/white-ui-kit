@@ -1,0 +1,19 @@
+@import '../../../themes/default.scss';
+
+// base
+$color: $text-color;
+$placeholder: rgba($text-color, 0.5);
+$bg: rgba($main, 0.0);
+$border: lighten($main, 50%);
+
+// hover/focus
+$hover-border: lighten($main, 35%);
+$focus-border: lighten($main, 20%);
+
+// disabled
+$disabled-color: $disabled-color;
+$disabled-bg: rgba($disabled, 0.15);
+$disabled-border: $disabled;
+
+// error
+$error-border: $error;

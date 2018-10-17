@@ -1,0 +1,17 @@
+<hit-svg></hit-svg>
+
+<div class="demo-page">
+	<div class="demo-page__links">
+
+		<a class="demo-page__link"
+			*ngFor="let item of links"
+			[routerLink]="item.link"
+			routerLinkActive="demo-page__link--active">
+			{{item.title}}
+		</a>
+
+	</div>
+	<div class="demo-page__content">
+		<router-outlet></router-outlet>
+	</div>
+</div>

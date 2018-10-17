@@ -1,0 +1,14 @@
+// Сброс стилей
+@mixin reset () {
+	box-sizing: border-box;
+	outline: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0); // fix touch
+	&::-moz-focus-inner { border: 0; } // fix пунктирная обводка firefox
+}
+
+// Сброс стилей компонента
+@mixin reset-component () {
+	&, & * {
+		@include reset();
+	}
+}

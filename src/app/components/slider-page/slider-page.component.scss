@@ -1,0 +1,44 @@
+@import '../../../scss/index.scss';
+
+:host {
+	@include col-max();
+	padding: 24px;
+	background: #F3F6FA;
+}
+
+.header {
+	@include reset();
+	@include row-auto();
+	@include font-family();
+	@include text-single-line();
+	font-size: 14px;
+	color: #626b74;
+	cursor: default;
+}
+
+.row {
+	@include row-max();
+}
+
+.row__cell {
+	@include col-max();
+	position: relative;
+	border-radius: 2px;
+	border: solid 1px #90A4AE;
+	background: #FFFFFF;
+	&:not(:first-child) {
+		margin-left: 24px;
+	}
+}
+
+.slider {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.slider--vertical {
+	top: 0;
+}
+.slider--horizontal {
+	left: 0;
+}

@@ -1,0 +1,75 @@
+@import '../../scss/index.scss';
+
+// Скролл
+:host {
+	@include reset-component();
+	@include col-max();
+	position: relative;
+	overflow: hidden;
+
+	.wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+	}
+	.viewport {
+		@include col-max();
+		align-items: flex-start;
+		position: absolute;
+		top: 0;
+		left: 0;
+		overflow: scroll;
+	}
+	.viewport--hidden {
+		opacity: 0;
+		visibility: hidden;
+	}
+	.canvas {
+		@include col-auto();
+		align-items: flex-start;
+	}
+
+	&[direction="horizontal"] {
+		.viewport {
+			@include row-max();
+			align-items: stretch;
+			overflow-y: hidden;
+			overflow-x: scroll;
+		}
+		.canvas {
+			@include row-auto();
+			align-items: stretch;
+		}
+	}
+
+	&[direction="vertical"] {
+		.viewport {
+			align-items: stretch;
+			overflow-y: scroll;
+			overflow-x: hidden;
+		}
+		.canvas {
+			align-items: stretch;
+		}
+	}
+
+	.slider {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		opacity: 1;
+		visibility: visible;
+		transition: opacity ease 0.3s, visibility ease 0.3s;
+	}
+	.slider--vertical {
+		top: 0;
+	}
+	.slider--horizontal {
+		left: 0;
+	}
+	.slider--hidden {
+		opacity: 0;
+		visibility: hidden;
+	}
+}

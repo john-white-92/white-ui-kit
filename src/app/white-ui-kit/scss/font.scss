@@ -1,0 +1,31 @@
+// Шрифт
+@mixin font-family () {
+	font-family: "Open Sans", Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Текст в одну строку
+@mixin text-single-line () {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+// Стиль placeholder для тега input
+@mixin placeholder ($color: rgba(#000000, 0.5)) {
+	// https://stackoverflow.com/questions/15497550/change-input-placeholder-color-darker
+	&::-webkit-input-placeholder {
+		color: $color;
+		opacity: 1 !important; // For older chrome versions
+	}
+	&::-moz-placeholder { /* Firefox 18- */
+		color: $color;
+		opacity: 1 !important;
+	}
+	&:-moz-placeholder { /* Firefox 19+ */
+		color: $color;
+		opacity: 1 !important;
+	}
+	&:-ms-input-placeholder { color: $color; }
+}

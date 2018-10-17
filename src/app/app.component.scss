@@ -1,0 +1,57 @@
+@import '../scss/index.scss';
+
+$bg-color: #5297E6;
+$color: #ffffff;
+
+:host {
+	@include col-max();
+	position: relative;
+	overflow: hidden;
+
+	&,
+	& * {
+		@include reset();
+	}
+}
+
+.demo-page {
+	@include col-max();
+}
+.demo-page__links {
+	@include row-auto();
+	flex-flow: wrap;
+	padding: 0 8px;
+	background: $bg-color;
+	z-index: 1;
+	box-shadow: 0px 0px 1px 1px rgba(#000000, 0.15);
+}
+.demo-page__link {
+	@include col-auto();
+	@include font-family();
+	@include text-single-line();
+	justify-content: center;
+	position: relative;
+	height: 46px;
+	padding: 0 8px;
+	font-size: 14px;
+	font-weight: 600;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	color: $color;
+}
+.demo-page__link--active {
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		pointer-events: none;
+		border-bottom: solid 3px $color;
+	}
+}
+.demo-page__content {
+	@include col-max();
+}

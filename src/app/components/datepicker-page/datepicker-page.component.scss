@@ -1,0 +1,30 @@
+@import '../../../scss/index.scss';
+
+:host {
+	@include col-max();
+	padding: 24px;
+}
+
+.date {
+	@include row-auto();
+	@include font-family();
+	@include text-single-line();
+	font-size: 15px;
+	margin-bottom: 24px;
+}
+
+.controls {
+	@include row-auto();
+}
+
+.calendar {
+	margin-right: 24px;
+}
+
+.inputs {
+	@include col-auto();
+	width: 220px;
+	& > * {
+		margin-bottom: 24px;
+	}
+}

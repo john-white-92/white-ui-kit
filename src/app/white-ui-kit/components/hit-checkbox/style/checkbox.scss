@@ -1,0 +1,134 @@
+@import '../../../scss/index.scss';
+
+// Чекбокс
+@mixin checkbox () {
+	@include reset-component();
+	@include row-auto();
+	position: relative;
+	align-items: center;
+
+	$size: 16px;
+
+	&, & * {
+		cursor: pointer;
+	}
+
+	&[disabled] {
+		&, & * {
+			cursor: default;
+		}
+	}
+
+	.input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.content {
+		@include col-auto();
+	}
+
+	.checker {
+		@include col-auto();
+		position: relative;
+		width: $size;
+		height: $size;
+		background: $bg;
+		overflow: hidden;
+		border-radius: 2px;
+	}
+
+	%checker-box {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		border-radius: 2px;
+	}
+
+	.checker:after {
+		@extend %checker-box;
+		content: '';
+		transition: border 0.2s ease;
+	}
+	.checker__checked {
+		@extend %checker-box;
+		@include col-auto();
+		background: $checked;
+		transition:
+			transform 0.2s ease,
+			background 0.2s ease,
+			opacity 0.2s ease;
+	}
+	.checker__icon {
+		transform: scale(0.9);
+		margin: auto;
+		width: 14px;
+		height: 10px;
+		fill: $fill;
+	}
+
+	.input + .checker {
+		&:after {
+			border: 1px solid $base;
+		}
+		& .checker__checked {
+			transform: scale(0.5);
+			opacity: 0;
+		}
+	}
+
+	.input:checked + .checker {
+		&:after {
+			border: 1px solid $checked;
+		}
+		& .checker__checked {
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+
+	&[disabled] {
+		.checker__checked {
+			background: $disabled;
+		}
+		.input + .checker {
+			&:after {
+				border: 1px solid $disabled;
+			}
+		}
+	}
+
+	&:not([disabled]):hover {
+		.checker__checked {
+			background: $hover;
+		}
+		.input + .checker {
+			&:after {
+				border: 1px solid $hover;
+			}
+		}
+		.input:checked + .checker {
+			&:after {
+				border: 1px solid $hover;
+			}
+		}
+	}
+
+	&:not([disabled]) {
+		.input:focus + .checker {
+			&:after {
+				border: 1px solid $hover;
+			}
+			& .checker__checked {
+				background: $hover;
+			}
+		}
+	}
+}

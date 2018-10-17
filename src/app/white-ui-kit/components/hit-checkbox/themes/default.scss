@@ -1,0 +1,9 @@
+@import '../../../themes/default.scss';
+
+// checkbox
+$bg: transparent;
+$fill: $main-color;
+$base: lighten($main, 30%);
+$checked: lighten($main, 15%);
+$hover: darken($main, 10%);
+$disabled: $disabled;

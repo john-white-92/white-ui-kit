@@ -1,0 +1,34 @@
+// flex с исправлением багов
+@mixin flex () {
+	display: flex;
+	min-width: 0;
+	min-height: 0;
+}
+
+// Контейнер распологает содержимое в строку
+@mixin row () {
+	@include flex();
+	flex-flow: row nowrap;
+}
+@mixin row-auto () {
+	@include row();
+	flex: 0 0 auto;
+}
+@mixin row-max () {
+	@include row();
+	flex: 1 1 0px;
+}
+
+// Контейнер распологает содержимое в столбец
+@mixin col () {
+	@include flex();
+	flex-flow: column nowrap;
+}
+@mixin col-auto () {
+	@include col();
+	flex: 0 0 auto;
+}
+@mixin col-max () {
+	@include col();
+	flex: 1 1 0px;
+}

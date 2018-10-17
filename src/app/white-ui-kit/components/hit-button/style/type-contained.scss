@@ -1,0 +1,30 @@
+// Кнопка
+@mixin type-contained () {
+	fill: $contained-icon;
+	color: $contained-color;
+	background: $contained-bg;
+	transition:
+		background 200ms ease,
+		color 200ms ease;
+	&:hover,
+	&:focus {
+		background: $contained-hover-bg;
+	}
+	&:active {
+		background: $contained-active-bg;
+	}
+	&[disabled] {
+		&,
+		&:hover,
+		&:focus,
+		&:active {
+			fill: $contained-disabled-icon;
+			color: $contained-disabled-color;
+			background: $contained-disabled-bg;
+		}
+	}
+
+	.content {
+		padding: 0 16px;
+	}
+}

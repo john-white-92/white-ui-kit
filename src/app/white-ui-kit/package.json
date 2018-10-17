@@ -1,0 +1,25 @@
+{
+	"name": "white-ui-kit",
+	"description": "",
+	"main": "./",
+	"author": "John White <fox.developer.92@gmail.com>",
+	"license": "ISC",
+	"scripts": {
+		"sprite": "svg-sprite -s --shape-id-generator='hit_' --symbol-dest=components/hit-svg --ss=hit-svg.component.html 'icons/**/*.svg' && node fix-svg-sprite.js ./components/hit-svg/hit-svg.component.html"
+	},
+	"dependencies": {
+		"css-element-queries": "1.0.2",
+		"date-fns": "1.29.0",
+		"inputmask": "4.0.0"
+	},
+	"devDependencies": {
+		"svg-sprite": "1.4.0"
+	},
+	"peerDependencies": {
+		"@angular/cdk": "^6.4.7",
+		"@angular/common": "^6.0.3",
+		"@angular/compiler": "^6.0.3",
+		"@angular/core": "^6.0.3",
+		"rxjs": "^6.0.0"
+	}
+}

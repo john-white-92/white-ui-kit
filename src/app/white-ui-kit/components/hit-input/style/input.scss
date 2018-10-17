@@ -1,0 +1,61 @@
+@import '../../../scss/index.scss';
+
+// Поле ввода
+@mixin input () {
+	@include reset();
+	@include font-family();
+	@include placeholder($placeholder);
+	height: 34px;
+	padding: 0 9px;
+	line-height: 18px;
+	font-size: 14px;
+	border-radius: 2px;
+	border: 1px solid $border;
+	background-color: $bg;
+	color: $color;
+	transition:
+		background 200ms ease,
+		color 200ms ease,
+		border 200ms ease;
+
+	// Сброс стандартного оформления
+	&::-ms-clear,
+	&::-ms-reveal {
+		display: none;
+	}
+	&[type='number'] {
+		-moz-appearance: textfield;
+	}
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+	}
+	&:required,
+	&:invalid {
+		box-shadow: none;
+	}
+	&:hover {
+		border: 1px solid $hover-border;
+	}
+	&:focus {
+		border: 1px solid $focus-border;
+	}
+
+	// Поле с ошибкой
+	&[has-error] {
+		border: solid 1px $error-border;
+	}
+
+	// Поле отключено / только для чтения
+	&[disabled],
+	&[readonly] {
+		&,
+		&:hover,
+		&:focus {
+			@include placeholder(rgba($disabled-color, 0.5));
+			background: $disabled-bg;
+			border: 1px solid $disabled-border;
+			color: $disabled-color;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+@import '../../scss/index.scss';
+
+// Тема по умолчанию
+:host {
+	@import './themes/default.scss';
+	@import './style/datepicker.scss';
+	@include datepicker();
+}

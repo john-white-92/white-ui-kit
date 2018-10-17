@@ -1,0 +1,29 @@
+<div class="date">
+	Date: {{testData}}
+</div>
+<div class="controls">
+	<hit-calendar class="calendar"
+		[selected]="testData"
+		(select)="testData = $event">
+	</hit-calendar>
+
+	<div class="inputs">
+		<app-test-row row-title="Toggle disabled">
+			<label hit-checkbox [(ngModel)]="disabled"></label>
+		</app-test-row>
+
+		<hit-datepicker
+			[disabled]="disabled"
+			placeholder="Поле деактивировано"
+			[(ngModel)]="testData">
+		</hit-datepicker>
+
+		<hit-datepicker
+			hasError="true"
+			placeholder="Поле с ошибкой"
+			[(ngModel)]="testData">
+		</hit-datepicker>
+
+		<hit-datepicker [(ngModel)]="testData"></hit-datepicker>
+	</div>
+</div>

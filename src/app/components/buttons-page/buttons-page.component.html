@@ -1,0 +1,117 @@
+<div class="row">
+	<button hit-button
+		(click)="isDisabled = !isDisabled">
+		disabled
+	</button>
+</div>
+
+<div class="row">
+	<button hit-button>
+		Кнопка
+	</button>
+
+	<button hit-button
+		[disabled]="isDisabled">
+		Кнопка (disabled)
+	</button>
+</div>
+
+<div class="row">
+	<button hit-button
+		buttonType="text">
+		Текст
+	</button>
+
+	<button hit-button
+		buttonType="text"
+		[disabled]="isDisabled">
+		Текст (disabled)
+	</button>
+</div>
+
+<div class="row">
+	<button hit-button
+		buttonType="outlined">
+		Кнопка
+	</button>
+
+	<button hit-button
+		buttonType="outlined"
+		[disabled]="isDisabled">
+		Кнопка (disabled)
+	</button>
+</div>
+
+<div class="row">
+	<button hit-button
+		buttonType="contained-high">
+		Кнопка
+	</button>
+
+	<button hit-button
+		buttonType="contained-high"
+		[disabled]="isDisabled">
+		Кнопка (disabled)
+	</button>
+</div>
+
+<div class="row">
+	<button hit-button>
+		<svg class="icon-left">
+			<use xlink:href="#hit_plus"></use>
+		</svg>
+		Со значком (left)
+	</button>
+
+	<button hit-button>
+		<svg class="icon-right">
+			<use xlink:href="#hit_plus"></use>
+		</svg>
+		Со значком (right)
+	</button>
+
+	<button hit-button
+		[disabled]="isDisabled">
+		<svg class="icon-left">
+			<use xlink:href="#hit_plus"></use>
+		</svg>
+		Со значком (disabled)
+	</button>
+</div>
+
+<div class="row">
+	<button hit-button
+		buttonType="outlined">
+		<svg class="icon-left">
+			<use xlink:href="#hit_plus"></use>
+		</svg>
+		Со значком (left)
+	</button>
+
+	<button hit-button
+		buttonType="outlined">
+		<svg class="icon-right">
+			<use xlink:href="#hit_plus"></use>
+		</svg>
+		Со значком (right)
+	</button>
+
+	<button hit-button
+		buttonType="outlined"
+		[disabled]="isDisabled">
+		<svg class="icon-left">
+			<use xlink:href="#hit_plus"></use>
+		</svg>
+		Со значком (disabled)
+	</button>
+</div>
+
+<div class="row">
+	<button class="button-wide" hit-button>
+		Широкая кнопка
+	</button>
+
+	<button class="button-wide" hit-button contentAlign="center">
+		По центру
+	</button>
+</div>

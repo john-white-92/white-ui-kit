@@ -1,0 +1,16 @@
+@import '../../../themes/default.scss';
+
+// calendar
+$calendar-shadow: rgba(87, 108, 132, 0.31);
+$calendar-bg: #FFFFFF;
+
+$button-hover-bg: rgba($main, 0.1);
+$button-color: $text-color;
+
+$cell-hover-bg: rgba($main, 0.1);
+$cell-today: $main;
+$cell-selected: $main;
+$cell-selected-color: $main-color;
+$cell-text: $text-color;
+$day-text: rgba($text-color, 0.5);
+$color-weekend: #e53935;

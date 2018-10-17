@@ -1,0 +1,80 @@
+@import '../../../scss/index.scss';
+
+$size-block: 880px;
+$size-block-2: 220px;
+
+:host {
+	@include row-max();
+	padding: 24px;
+	background: #F3F6FA;
+}
+
+.wrapper {
+	@include col-max();
+	&:not(:first-child) {
+		margin-left: 24px;
+	}
+}
+.wrapper--small {
+	.block {
+		width: $size-block / 10;
+		height: $size-block / 10;
+	}
+	.block-2 {
+		min-width: $size-block-2 / 10;
+		min-height: $size-block-2 / 10;
+	}
+}
+
+.scroll {
+	position: relative;
+	border-radius: 2px;
+	border: solid 1px #90A4AE;
+	background: #FFFFFF;
+	&:not(:first-child) {
+		margin-top: 24px;
+	}
+	&:after {
+		@include reset();
+		@include col-auto();
+		@include font-family();
+		@include text-single-line();
+		content: attr(title);
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 12px;
+		font-size: 15px;
+		color: #37474F;
+		cursor: default;
+	}
+}
+.block {
+	width: $size-block;
+	height: $size-block;
+	background: linear-gradient(-45deg, #4DB6AC, #00838F);
+}
+.block-2 {
+	min-width: $size-block-2;
+	min-height: $size-block-2;
+	background: linear-gradient(-45deg, #FB8C00, #F4511E);
+}
+
+.scroll {
+	&[direction="vertical"] {
+		.block {
+			background: linear-gradient(#4DB6AC, #00838F);
+		}
+		.block-2 {
+			background: linear-gradient(#FB8C00, #F4511E);
+		}
+	}
+	&[direction="horizontal"] {
+		.block {
+			background: linear-gradient(-90deg, #4DB6AC, #00838F);
+		}
+		.block-2 {
+			background: linear-gradient(-90deg, #FB8C00, #F4511E);
+		}
+	}
+}

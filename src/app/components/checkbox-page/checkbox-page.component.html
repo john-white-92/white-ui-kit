@@ -1,0 +1,55 @@
+<app-test-row row-title="Toggle disabled">
+	<label hit-checkbox [(ngModel)]="disabled"></label>
+</app-test-row>
+
+<app-test-row row-title="@Input checked + @Output check / [disabled]">
+	<label hit-checkbox
+		[checked]="checked"
+		(check)="checked = $event">
+		<span class="text">Флаг</span>
+	</label>
+
+	<label hit-checkbox
+		[disabled]="disabled"
+		[checked]="checked"
+		(check)="checked = $event">
+		<span class="text">Флаг (disabled)</span>
+	</label>
+</app-test-row>
+
+<app-test-row row-title="[(ngModel)] / [disabled]">
+	<label hit-checkbox
+		[(ngModel)]="checked">
+		<span class="text">Флаг</span>
+	</label>
+
+	<label hit-checkbox
+		[(ngModel)]="checked"
+		[disabled]="disabled">
+		<span class="text">Флаг (disabled)</span>
+	</label>
+</app-test-row>
+
+<app-test-row [formGroup]="form"
+	[attr.row-title]="'Реакивная форма: ' + (form.value | json)">
+	<label hit-checkbox formControlName="flag">
+		<span class="text">Флаг</span>
+	</label>
+
+	<label hit-checkbox formControlName="flagDisabled">
+		<span class="text">Флаг (disabled)</span>
+	</label>
+</app-test-row>
+
+<app-test-row row-title="Дополнительное оформление">
+	<label class="box"
+		hit-checkbox
+		[(ngModel)]="checked">
+	</label>
+
+	<label class="box box--round"
+		hit-checkbox
+		[(ngModel)]="checked"
+		[disabled]="disabled">
+	</label>
+</app-test-row>

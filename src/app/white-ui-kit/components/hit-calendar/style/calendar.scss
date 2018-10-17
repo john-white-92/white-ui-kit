@@ -1,0 +1,185 @@
+@import '../../../scss/index.scss';
+
+@mixin calendar () {
+	@include reset-component();
+	@include col-auto();
+
+	$calendar-width: 272px;
+	$calendar-height: 312px;
+	$days-size: 20px;
+	$cell-size: 32px;
+	$big-cell-width: 59px;
+
+	.calendar {
+		@include col-auto();
+		position: relative;
+		overflow: hidden;
+		width: $calendar-width;
+		height: $calendar-height;
+		z-index: 1;
+		background: $calendar-bg;
+		box-shadow: 0 5px 12px 0 $calendar-shadow;
+	}
+	.calendar__header {
+		@include col-auto();
+		padding: 12px;
+		padding-bottom: 0;
+	}
+	.calendar__body {
+		@include col-auto();
+		padding: 12px;
+	}
+
+	.view {
+		@include col-auto();
+	}
+
+	.control-row {
+		@include row-auto();
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.days-row {
+		@include row-auto();
+		height: $days-size;
+		margin-top: 12px;
+	}
+
+	.row {
+		@include row-auto();
+		margin-top: 4px;
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	.button {
+		vertical-align: middle;
+		height: 32px;
+		border-radius: 2px;
+		border: none;
+		user-select: none;
+		text-decoration: none;
+		text-transform: uppercase;
+		background: $calendar-bg;
+		transition: background 200ms ease;
+		&:hover {
+			background: $button-hover-bg;
+		}
+	}
+	.button--arrow {
+		text-align: center;
+		width: 32px;
+		border-radius: 2px;
+		.button__icon {
+			transform: rotate(90deg);
+			width: 14px;
+			height: 14px;
+			margin: auto;
+		}
+	}
+	.button--arrow-right {
+		margin-left: 4px;
+		.button__icon {
+			transform: rotate(-90deg);
+		}
+	}
+	.button--arrow-up {
+		.button__icon {
+			transform: rotate(180deg);
+		}
+	}
+	.button__wrapper {
+		@include row-max();
+		align-items: center;
+	}
+	.button__text {
+		@include text-single-line();
+		@include font-family();
+		padding: 0 8px;
+		font-size: 13px;
+		font-weight: bold;
+		color: $button-color;
+	}
+	.button__icon {
+		width: 8px;
+		height: 8px;
+		margin-right: 8px;
+		fill: $button-color;
+	}
+
+	.arrows {
+		@include row-auto();
+	}
+
+	%base-cell {
+		@include col-auto();
+		align-items: center;
+		justify-content: center;
+		width: $cell-size;
+		height: $cell-size;
+		margin-left: 4px;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+	%base-cell-text {
+		@include text-single-line();
+		@include font-family();
+		font-size: 13px;
+		user-select: none;
+		cursor: default;
+	}
+
+	.name-day-cell {
+		@extend %base-cell;
+		height: $days-size;
+	}
+	.name-day-cell__text {
+		@extend %base-cell-text;
+		color: $day-text;
+	}
+
+	.cell {
+		@extend %base-cell;
+		border-radius: 2px;
+		background: $calendar-bg;
+		transition:
+			background 0.2s ease,
+			border 0.2s ease;
+		&:hover {
+			background: $cell-hover-bg;
+		}
+	}
+	.cell--hidden {
+		visibility: hidden;
+	}
+	.cell--today {
+		border: 2px solid $cell-today;
+	}
+	.cell--selected,
+	.cell--selected:hover {
+		background: $cell-selected;
+		&.cell--today {
+			border: 2px solid $cell-today;
+			box-shadow: inset 0 0 0 2px $cell-selected-color;
+		}
+		.cell__text,
+		&.cell--weekend .cell__text {
+			color: $cell-selected-color;
+		}
+	}
+	.cell--big {
+		width: $big-cell-width;
+	}
+	.cell--weekend .cell__text {
+		color: $color-weekend;
+	}
+	.cell__text {
+		@extend %base-cell-text;
+		text-transform: uppercase;
+		font-weight: bold;
+		color: $cell-text;
+	}
+}

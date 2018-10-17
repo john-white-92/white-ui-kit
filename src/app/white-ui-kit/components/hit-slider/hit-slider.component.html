@@ -1,0 +1,19 @@
+<div class="button button--up"
+	(click)="onLineUp(); $event.preventDefault();">
+</div>
+
+<div class="slider"
+	#slider
+	(click)="onSliderClick($event); $event.preventDefault();">
+	<div class="thumb"
+		#thumb
+		[ngStyle]="thumbStyle"
+		[ngClass]="{ 'thumb--pressed': isThumbPressed }"
+		(mousedown)="onMouseDown($event); $event.preventDefault();"
+		(touchstart)="onTouchStart($event)">
+	</div>
+</div>
+
+<div class="button button--down"
+	(click)="onLineDown(); $event.preventDefault();">
+</div>

@@ -1,0 +1,65 @@
+<div class="calendar">
+	<div class="calendar__header">
+		<div class="control-row">
+			<button class="button"
+				[ngClass]="{ 'button--arrow-up': mode !== CalendarMode.Month }"
+				(click)="onChangeMode()">
+				<span class="button__wrapper">
+					<span class="button__text">{{title}}</span>
+					<svg class="button__icon">
+						<use xlink:href="#hit_arrow"></use>
+					</svg>
+				</span>
+			</button>
+			<div class="arrows">
+				<button class="button button--arrow"
+					(click)="onLeft()">
+					<span class="button__wrapper">
+						<svg class="button__icon">
+							<use xlink:href="#hit_arrow"></use>
+						</svg>
+					</span>
+				</button>
+				<button class="button button--arrow button--arrow-right"
+					(click)="onRight()">
+					<span class="button__wrapper">
+						<svg class="button__icon">
+							<use xlink:href="#hit_arrow"></use>
+						</svg>
+					</span>
+				</button>
+			</div>
+		</div>
+		<div class="days-row"
+			*ngIf="mode === CalendarMode.Month">
+			<div class="name-day-cell"
+				*ngFor="let day of NAME_DAYS">
+				<span class="name-day-cell__text">
+					{{day}}
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="calendar__body">
+		<div class="view">
+			<div class="row"
+				*ngFor="let items of itemsList">
+				<div class="cell"
+					[ngClass]="{
+						'cell--big': mode !== CalendarMode.Month,
+						'cell--hidden': !item.date,
+						'cell--today': item.isToday,
+						'cell--selected': item.isSelected,
+						'cell--weekend': item.isWeekend && mode === CalendarMode.Month
+					}"
+					*ngFor="let item of items"
+					(click)="onSelect(item)">
+					<span class="cell__text">
+						{{item.text}}
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

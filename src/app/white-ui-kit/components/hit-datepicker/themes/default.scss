@@ -1,0 +1,6 @@
+@import '../../../themes/default.scss';
+
+// datepicker
+$fill: lighten($main, 50%);
+$fill-hover: lighten($main, 35%);
+$fill-opened: $main;

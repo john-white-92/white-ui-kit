@@ -1,0 +1,53 @@
+@import '../../../scss/index.scss';
+
+// Выбор даты
+@mixin datepicker () {
+	@include reset-component();
+
+	input {
+		@include row-max();
+	}
+	input[disabled] + .toggle {
+		cursor: default;
+		pointer-events: none;
+	}
+
+	.datepicker {
+		@include row-max();
+		position: relative;
+		overflow: hidden;
+		height: 34px;
+	}
+
+	.toggle {
+		@include row-auto();
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		width: 34px;
+		border-left: none;
+		border-radius: 0 3px 3px 0;
+		cursor: pointer;
+		&:hover {
+			.toggle__icon {
+				fill: $fill-hover;
+			}
+		}
+	}
+	.toggle--opened {
+		&, &:hover {
+			.toggle__icon {
+				fill: $fill-opened;
+			}
+		}
+	}
+	.toggle__icon {
+		width: 32px;
+		height: 32px;
+		margin: auto;
+		pointer-events: none;
+		fill: $fill;
+		transition: fill 200ms ease;
+	}
+}

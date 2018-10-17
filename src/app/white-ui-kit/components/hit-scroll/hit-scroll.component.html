@@ -1,0 +1,48 @@
+<div #wrapperRef
+	class="wrapper"
+	[ngStyle]="{
+		'right.px': sliders.width,
+		'bottom.px': sliders.height
+	}">
+	<div #viewportRef
+		class="viewport"
+		[ngClass]="{ 'viewport--hidden' : !compensation }"
+		[ngStyle]="{
+			'right.px': isHorizontal ? 0 : -compensation?.width,
+			'bottom.px': isVertical ? 0 : -compensation?.height
+		}">
+		<div #canvasRef class="canvas">
+			<ng-content></ng-content>
+		</div>
+	</div>
+</div>
+
+<hit-slider #verticalSlider
+	direction="vertical"
+	class="slider slider--vertical slider--hidden"
+	[ngClass]="{ 'slider--hidden' : !sliders.isVertical }"
+	[ngStyle]="{ 'bottom.px': sliders.height }"
+	[viewport]="wrapper.height"
+	[canvas]="canvas.height"
+	[offset]="offset.top"
+	(sliderMoved)="onVerticalSliderMoved($event)"
+	(sliderPageUp)="onVerticalScroll(-wrapper.height)"
+	(sliderPageDown)="onVerticalScroll(wrapper.height)"
+	(sliderLineUp)="onVerticalScroll(-LINE_SIZE)"
+	(sliderLineDown)="onVerticalScroll(LINE_SIZE)">
+</hit-slider>
+
+<hit-slider #horizontalSlider
+	direction="horizontal"
+	class="slider slider--horizontal slider--hidden"
+	[ngClass]="{ 'slider--hidden' : !sliders.isHorizontal }"
+	[ngStyle]="{ 'right.px': sliders.width }"
+	[viewport]="wrapper.width"
+	[canvas]="canvas.width"
+	[offset]="offset.left"
+	(sliderMoved)="onHorizontalSliderMoved($event)"
+	(sliderPageUp)="onHorizontalScroll(-wrapper.width)"
+	(sliderPageDown)="onHorizontalScroll(wrapper.width)"
+	(sliderLineUp)="onHorizontalScroll(-LINE_SIZE)"
+	(sliderLineDown)="onHorizontalScroll(LINE_SIZE)">
+</hit-slider>

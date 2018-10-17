@@ -1,0 +1,55 @@
+<app-test-row row-title="Toggle disabled">
+	<label hit-checkbox [(ngModel)]="disabled"></label>
+</app-test-row>
+
+<app-test-row row-title="Не редактируемые поля readonly / readonly + disabled">
+	<input hit-input
+		placeholder="Placeholder"
+		readonly
+		type="text"
+		[(ngModel)]="text">
+
+	<input hit-input
+		placeholder="Placeholder"
+		[disabled]="disabled"
+		type="text"
+		[(ngModel)]="text">
+</app-test-row>
+
+<app-test-row row-title="Стандартное поле text / disabled">
+	<input hit-input
+		placeholder="Placeholder"
+		type="text"
+		[(ngModel)]="text">
+
+	<input hit-input
+		placeholder="Placeholder"
+		[disabled]="disabled"
+		type="text"
+		[(ngModel)]="text">
+</app-test-row>
+
+<app-test-row row-title="Поле с ошибкой [hasError]=&quot;true&quot; / disabled">
+	<input hit-input
+		placeholder="Placeholder"
+		type="text"
+		[hasError]="true"
+		[(ngModel)]="text">
+
+	<input hit-input
+		placeholder="Placeholder"
+		[disabled]="disabled"
+		type="text"
+		[hasError]="true"
+		[(ngModel)]="text">
+</app-test-row>
+
+<app-test-row row-title="Типы полей password / number">
+	<input hit-input
+		placeholder="type=&quot;password&quot;"
+		type="password">
+
+	<input hit-input
+		placeholder="type=&quot;number&quot;"
+		type="number">
+</app-test-row>

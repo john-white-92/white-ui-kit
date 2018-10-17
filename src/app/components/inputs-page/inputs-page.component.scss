@@ -1,0 +1,14 @@
+@import '../../../scss/index.scss';
+
+:host {
+	@include col-max();
+	padding: 12px;
+}
+
+input {
+	@include row-max();
+	max-width: 200px;
+	&:not(:first-child) {
+		margin-left: 12px;
+	}
+}

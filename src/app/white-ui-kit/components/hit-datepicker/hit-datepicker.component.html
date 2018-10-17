@@ -1,0 +1,18 @@
+<div class="datepicker" cdk-overlay-origin #popupOrigin="cdkOverlayOrigin">
+
+	<input type="text" spellcheck="false"
+		hit-input hitDateMask
+		[placeholder]="placeholder ? placeholder : ''"
+		[disabled]="disabled"
+		[hasError]="hasError"
+		[(ngModel)]="text"
+		(completeMask)="onCompleteMask($event)">
+
+	<div class="toggle"
+		[ngClass]="{ 'toggle--opened': isCalendarOpened }"
+		(click)="onToggle()">
+		<svg class="toggle__icon">
+			<use xlink:href="#hit_datepicker"></use>
+		</svg>
+	</div>
+</div>

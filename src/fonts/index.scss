@@ -1,0 +1,28 @@
+// Open Sans Regular
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../src/fonts/Open_Sans/Regular/OpenSans-Regular.eot');
+	src: local('Open Sans Regular'), local('OpenSans-Regular'),
+			 url('../src/fonts/Open_Sans/Regular/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+			 url('../src/fonts/Open_Sans/Regular/OpenSans-Regular.woff2') format('woff2'),
+			 url('../src/fonts/Open_Sans/Regular/OpenSans-Regular.woff') format('woff'),
+			 url('../src/fonts/Open_Sans/Regular/OpenSans-Regular.ttf') format('truetype'),
+			 url('../src/fonts/Open_Sans/Regular/OpenSans-Regular.svg#OpenSans') format('svg');
+}
+
+// Open Sans Semibold
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 600;
+	src: url('../src/fonts/Open_Sans/Semibold/OpenSans-Semibold.eot');
+	src: local('Open Sans Semibold'), local('OpenSans-Semibold'),
+			 url('../src/fonts/Open_Sans/Semibold/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),
+			 url('../src/fonts/Open_Sans/Semibold/OpenSans-Semibold.woff2') format('woff2'),
+			 url('../src/fonts/Open_Sans/Semibold/OpenSans-Semibold.woff') format('woff'),
+			 url('../src/fonts/Open_Sans/Semibold/OpenSans-Semibold.ttf') format('truetype'),
+			 url('../src/fonts/Open_Sans/Semibold/OpenSans-Semibold.svg#OpenSans') format('svg');
+}
+

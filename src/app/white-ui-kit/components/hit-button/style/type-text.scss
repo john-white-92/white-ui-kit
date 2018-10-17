@@ -1,0 +1,25 @@
+// Кнопка
+@mixin type-text () {
+	color: $text-color;
+	background: $text-bg;
+	transition: color 200ms ease;
+	&:hover,
+	&:focus {
+		color: $text-hover-color;
+	}
+	&:active {
+		color: $text-active-color;
+	}
+	&[disabled] {
+		&,
+		&:hover,
+		&:focus,
+		&:active {
+			color: $text-disabled-color;
+		}
+	}
+
+	.content {
+		padding: 0 16px;
+	}
+}
